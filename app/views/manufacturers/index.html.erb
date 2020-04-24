@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Manufacutrers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manufacutrers.each do |manufacutrer| %>
+      <tr>
+        <td><%= link_to manufacutrer.name, manufacutrer %></td>
+        <td><%= manufacutrer.location %></td>
+        <td><%= link_to 'Edit', edit_toy_path(manufacutrer) %></td>
+        <td><%= link_to 'Delete', manufacutrer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Manufacturer', new_manufacutrer_path %>
