@@ -12,17 +12,18 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :email %>
-    <%= form.email_field :email %>
+    <%= form.email_field :email, class: "form-control"%>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :password %>
-    <%= form.password :password %>
+    <%= form.password_field :password, class: "form-control", placeholder: "Password" %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

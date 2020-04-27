@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @manfacturers = User.all
+    @users = User.all
   end
 
   # GET /users/1
