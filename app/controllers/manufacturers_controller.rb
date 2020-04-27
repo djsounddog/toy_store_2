@@ -5,7 +5,7 @@ class ManufacturersController < ApplicationController
 
   # GET /manufacturers
   def index
-    @manfacturers = Manufacturer.all
+    @manufacutrers = Manufacturer.all
   end
 
   # GET /manufacturers/1
@@ -31,10 +31,15 @@ class ManufacturersController < ApplicationController
 
   # PATCH/PUT /manufacturers/1
   def update
-    if @manufacturer.update(manufacturer_params)
-      redirect_to @manufacturer
+    @manufacturer.assign_attributes(manufacturer_params)
+    if p @manufacturer.changed?
+      if @manufacturer.update(manufacturer_params)
+        redirect_to @manufacturer
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to @manufacturer
     end
   end
 

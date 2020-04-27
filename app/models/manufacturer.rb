@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
 class Manufacturer < ApplicationRecord
-  validates :name, :location, presence: true
-  has_many :toys
+  has_many :toys, dependent: :destroy
 end

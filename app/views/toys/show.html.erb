@@ -5,6 +5,8 @@
   <%= @toy.name %>
 </p>
 
+<%= image_tag @toy.image if @toy.image.attached? %>
+
 <p>
   <strong>Description:</strong>
   <%= @toy.description %>

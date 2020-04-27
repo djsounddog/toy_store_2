@@ -32,6 +32,17 @@
     <%= form.text_field :posted_by %>
   </div>
 
+  <div class="field">
+<%# Manufacturer select %>
+    <%= form.label :manufacturer %>
+    <%= form.collection_select(:manufacturer_id, Manufacturer.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

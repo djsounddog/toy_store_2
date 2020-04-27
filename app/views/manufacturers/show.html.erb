@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @manufacturer.name %>
-</p>
+</h1>
 
 <p>
   <strong>Location:</strong>
@@ -21,6 +20,7 @@
     </tr>
   </thead>
 
+<h2>Toys Made:</h2>
   <tbody>
     <% @manufacturer.toys.each do |toy| %>
       <tr>
