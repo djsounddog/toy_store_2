@@ -16,13 +16,11 @@
   <tbody>
     <% @toys.each do |toy| %>
       <tr>
-        <td><%= toy.name %></td>
+        <td><%= link_to toy.name , toy %></td>
         <td><%= toy.description %></td>
         <td><%= toy.date_posted %></td>
         <td><%= toy.posted_by %></td>
-        <td><%= link_to 'Show', toy %></td>
         <td><%= link_to 'Edit', edit_toy_path(toy) %></td>
-        <td><%= link_to 'Destroy', toy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

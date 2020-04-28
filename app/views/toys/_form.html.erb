@@ -28,11 +28,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :posted_by %>
-    <%= form.collection_select(:user_id, User.all, :name, :email) %>
-  </div>
-
-  <div class="field">
 <%# Manufacturer select %>
     <%= form.label :manufacturer %>
     <%= form.collection_select(:manufacturer_id, Manufacturer.all, :id, :name) %>
