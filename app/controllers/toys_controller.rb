@@ -6,6 +6,12 @@ class ToysController < ApplicationController
   # GET /toys
   def index
     @toys = Toy.all
+    # if session[:count].nil?
+    #   session[:count] = 0
+    # else
+    #   puts "session count = #{session[:count]}"
+    #   session[:count] += 1
+    # end
   end
 
   # GET /toys/1
