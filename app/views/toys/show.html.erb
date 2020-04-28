@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h1>
   <strong>Name:</strong>
   <%= @toy.name %>
-</p>
+</h1>
 
-<%= image_tag @toy.image if @toy.image.attached? %>
+<%= image_tag((@toy.image if @toy.image.attached?), class: 'img-thumbnail', style: 'width: 200px; height:200px;') %>
 
 <p>
   <strong>Description:</strong>

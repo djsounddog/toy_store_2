@@ -44,9 +44,9 @@ class ManufacturersController < ApplicationController
   end
 
   # DELETE /manufacturers/1
-  def destroy
+  def delete
     @manufacturer.destroy
-    redirect_to manufacturers_url
+    redirect_to manufacturer_path
   end
 
   private
