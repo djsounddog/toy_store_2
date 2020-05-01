@@ -5,7 +5,7 @@
   <%= @toy.name %>
 </h1>
 
-<%= image_tag((@toy.image if @toy.image.attached?), class: 'img-thumbnail', style: 'width: 200px; height:200px;') %>
+<%= image_tag(@toy.image, class: 'img-thumbnail', style: 'width: 200px; height:200px;') if @toy.image.attached? %>
 
 <p>
   <strong>Description:</strong>
@@ -23,7 +23,7 @@
 </p>
 
 <%= link_to 'Back', toys_path %>
-<%= if user_signed_in? %>
-<%= link_to 'Edit', edit_toy_path(@toy) %>
-<%= link_to 'Destroy', @toy, method: :delete, data: { confirm: 'Are you sure?' }, class: "button-danger" %>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_toy_path(@toy) %>
+  <%= link_to 'Destroy', @toy, method: :delete, data: { confirm: 'Are you sure?' }, class: "button-danger" %>
 <% end %>
