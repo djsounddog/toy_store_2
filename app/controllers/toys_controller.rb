@@ -27,7 +27,7 @@ class ToysController < ApplicationController
 
   # POST /toys
   def create
-    @toy = Toy.new(toy_params)
+    @toy = current_user.toys.new(toy_params)
     if @toy.save
       redirect_to @toy
     else
