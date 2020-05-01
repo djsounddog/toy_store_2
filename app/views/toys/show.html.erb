@@ -22,6 +22,8 @@
   <%= @toy.posted_by %>
 </p>
 
-<%= link_to 'Edit', edit_toy_path(@toy) %>
 <%= link_to 'Back', toys_path %>
+<%= if user_signed_in? %>
+<%= link_to 'Edit', edit_toy_path(@toy) %>
 <%= link_to 'Destroy', @toy, method: :delete, data: { confirm: 'Are you sure?' }, class: "button-danger" %>
+<% end %>
